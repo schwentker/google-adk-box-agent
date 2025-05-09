@@ -6,13 +6,15 @@ from ..tools.box_agent_tools import (
     box_read_tool,
     box_search_folder_by_name,
     box_list_folder_content_by_folder_id,
+    box_ask_ai_tool,
+    box_ai_extract_data,
 )
 
 # Setup logging (optional but recommended)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-box_generic_agent_llm = LlmAgent(
+box_full_agent_llm = LlmAgent(
     model="gemini-2.0-flash",
     # model="gemini-2.5-pro",
     name="box_generic_agent",
@@ -31,6 +33,9 @@ box_generic_agent_llm = LlmAgent(
     - Answering questions about Box connectivity
     - Providing information about the user's identity in Box
     - Assisting with file and folder management tasks
+    - Answering questions using Box AI
+    - Asking Box AI about a document
+    - Extracting data from documents using Box AI
     """,
     tools=[
         box_who_am_i_tool,
@@ -38,5 +43,7 @@ box_generic_agent_llm = LlmAgent(
         box_read_tool,
         box_search_folder_by_name,
         box_list_folder_content_by_folder_id,
+        box_ask_ai_tool,
+        box_ai_extract_data,
     ],
 )

@@ -14,7 +14,7 @@ from box_ai_agents_toolkit import (
 )
 
 
-def box_who_am_i() -> dict:
+def box_who_am_i_tool() -> dict:
     """who am I, Retrieves the current user's information in box. Checks the connection to Box
 
     Returns:
@@ -22,6 +22,9 @@ def box_who_am_i() -> dict:
     """
     client = get_ccg_client()
     return client.users.get_user_me().to_dict()
+
+    # user = client.users.get_user_me()
+    # return f"User ID: {user.id}, Name: {user.name}, Login: {user.login}"
 
 
 def box_search_tool(
@@ -60,6 +63,13 @@ def box_search_tool(
 
     # Return the dictionary of each file in the search results
     return [file.to_dict() for file in search_results]
+    # response = [file.to_dict() for file in search_results]
+
+    # # return a string from the response list
+    # response_str = ""
+    # for file in response:
+    #     response_str += f"ID: {file['id']}, Name: {file['name']}, Type: {file['type']}, Size: {file['size']}, Description: {file['description']}\n"
+    # return response_str
 
 
 def box_read_tool(file_id: str) -> str:
