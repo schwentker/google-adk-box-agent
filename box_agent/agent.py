@@ -9,16 +9,14 @@ from google.adk.agents.invocation_context import InvocationContext
 from google.adk.events import Event
 
 # Import sub-agents
-from .sub_agents.box_agent_generic import box_generic_agent_llm
-from .sub_agents.box_agent_ai import box_ai_agent_llm
-from .sub_agents.box_agent_full import box_full_agent_llm
+from .sub_agents.box_agent import box_full_agent_llm
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class BoxFlowAgent(BaseAgent):
+class BoxAgent(BaseAgent):
     """
     Custom agent for Box content search workflow.
 
@@ -44,7 +42,7 @@ class BoxFlowAgent(BaseAgent):
 
 # Create and export the root_agent
 # THIS IS THE CRITICAL LINE FOR THE ADK CLI
-root_agent = BoxFlowAgent(
+root_agent = BoxAgent(
     name="BoxFlowAgent",
     box_full_agent=box_full_agent_llm,
 )
