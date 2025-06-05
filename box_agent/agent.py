@@ -17,13 +17,6 @@ logger = logging.getLogger(__name__)
 
 
 class BoxAgent(BaseAgent):
-    """
-    Custom agent for Box content search workflow.
-
-    This agent decides whether to route queries to the Box Search agent
-    or the Box Hub agent based on the content of the query.
-    """
-
     # Field declarations for Pydantic
     box_full_agent: LlmAgent
 
@@ -31,10 +24,11 @@ class BoxAgent(BaseAgent):
     async def _run_async_impl(
         self, ctx: InvocationContext
     ) -> AsyncGenerator[Event, None]:
-        """
-        Implements the custom orchestration logic for the Box search workflow.
-        Uses the decision router to determine which path to take.
-        """
+        agent_name = ctx.agent.name
+        session_id = ctx.session.id
+        print(
+            f"Agent {agent_name} running in session {session_id} for invocation {ctx.invocation_id}"
+        )
 
         async for event in self.box_full_agent.run_async(ctx):
             yield event
