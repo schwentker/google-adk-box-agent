@@ -27,7 +27,7 @@ The Box Agent leverages the Box AI Agents Toolkit to provide a seamless interfac
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/google-adk-box-agent.git
+git clone https://github.com/box-community/google-adk-box-agent.git
 cd google-adk-box-agent
 ```
 
@@ -97,11 +97,6 @@ uv run adk web
     - `box_agent.py`: Core Box functionality agent
   - `tools/`: Tool implementations
     - `box_agent_tools.py`: Box-specific tool wrappers
-
-
-## License
-
-[Include your license information here]
 
 ## Acknowledgements
 
