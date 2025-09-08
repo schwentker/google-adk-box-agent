@@ -99,11 +99,7 @@ uv run adk web
     - `box_agent_tools.py`: Box-specific tool wrappers
 
 
-## License
-
-[Include your license information here]
-
 ## Acknowledgements
 
-- [Box AI Agents Toolkit](https://github.com/box/box-ai-agents-toolkit)
-- [Google Agent Development Kit (ADK)](https://github.com/google/adk)
+- [Box AI Agents Toolkit](https://github.com/box-community/box-ai-agents-toolkit)
+- [Google Agent Development Kit (ADK)](https://google.github.io/adk-docs/)
