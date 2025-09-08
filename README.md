@@ -100,5 +100,5 @@ uv run adk web
 
 ## Acknowledgements
 
-- [Box AI Agents Toolkit](https://github.com/box/box-ai-agents-toolkit)
-- [Google Agent Development Kit (ADK)](https://github.com/google/adk)
+- [Box AI Agents Toolkit](https://github.com/box-community/box-ai-agents-toolkit)  
+- [Google Agent Development Kit (ADK)](https://google.github.io/adk-docs/)
